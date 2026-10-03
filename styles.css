@@ -1,0 +1,563 @@
+/* ==============================================================================
+   HARMAN SINGH KOHLI - PROFESSIONAL PORTFOLIO & RESUME
+   Clean, Refined Executive Dark Theme (Linear / Vercel Minimalist Aesthetic)
+   ============================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+:root {
+  --bg-base: #07090e;
+  --bg-surface: rgba(13, 19, 32, 0.72);
+  --bg-surface-elevated: rgba(18, 26, 44, 0.85);
+  --bg-surface-hover: rgba(22, 33, 56, 0.92);
+  
+  --border-subtle: rgba(255, 255, 255, 0.08);
+  --border-medium: rgba(255, 255, 255, 0.14);
+  --border-focus: #3b82f6;
+  
+  --accent-primary: #3b82f6;
+  --accent-primary-hover: #2563eb;
+  --accent-subtle: rgba(59, 130, 246, 0.12);
+  --accent-border: rgba(59, 130, 246, 0.35);
+  
+  /* Dynamic Cyber Accent System */
+  --cyber-accent: #00f0ff;
+  --cyber-accent-rgb: 0, 240, 255;
+  --cyber-glow: rgba(0, 240, 255, 0.35);
+  --cyber-border: rgba(0, 240, 255, 0.22);
+  
+  --text-primary: #f8fafc;
+  --text-secondary: #94a3b8;
+  --text-tertiary: #64748b;
+  --text-body: #cbd5e1;
+}
+
+/* Cyber Theme Modes */
+body.theme-emerald {
+  --cyber-accent: #10b981;
+  --cyber-accent-rgb: 16, 185, 129;
+  --cyber-glow: rgba(16, 185, 129, 0.4);
+  --cyber-border: rgba(16, 185, 129, 0.25);
+  --accent-primary: #059669;
+  --accent-primary-hover: #047857;
+}
+
+body.theme-purple {
+  --cyber-accent: #c084fc;
+  --cyber-accent-rgb: 192, 132, 252;
+  --cyber-glow: rgba(192, 132, 252, 0.4);
+  --cyber-border: rgba(192, 132, 252, 0.25);
+  --accent-primary: #8b5cf6;
+  --accent-primary-hover: #7c3aed;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  color-scheme: dark;
+  overflow-x: hidden;
+  max-width: 100vw;
+  width: 100%;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background-color: var(--bg-base);
+  color: var(--text-body);
+  overflow-x: hidden;
+  max-width: 100vw;
+  width: 100%;
+  position: relative;
+  min-height: 100vh;
+  line-height: 1.6;
+  font-size: 15px;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Subtle Grid Background Pattern */
+.subtle-grid {
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+/* Top Window Scroll Progress Bar */
+#scrollProgressBar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 2.5px;
+  background: linear-gradient(90deg, #2563eb, #38bdf8);
+  z-index: 100;
+  width: 0%;
+  transition: width 0.08s ease-out;
+  box-shadow: 0 0 8px rgba(56, 189, 248, 0.6);
+}
+
+/* Momentum scrolling for horizontally scrollable code and pipelines */
+.overflow-x-auto {
+  -webkit-overflow-scrolling: touch;
+}
+
+code, kbd, pre, .font-mono {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+/* Navigation Bar */
+.nav-surface {
+  background: rgba(7, 9, 14, 0.85);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+/* Surface Cards with Frosted Glass & Interactive Spotlight */
+.card-base {
+  background: var(--bg-surface);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid var(--border-subtle);
+  border-radius: 12px;
+  position: relative;
+  transition: border-color 0.2s ease, transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.2s ease, background 0.2s ease, opacity 0.25s ease;
+}
+
+.card-base:hover {
+  border-color: rgba(59, 130, 246, 0.4);
+  background: var(--bg-surface-elevated);
+  box-shadow: 0 14px 32px -10px rgba(0, 0, 0, 0.55), 0 0 20px -6px rgba(59, 130, 246, 0.15);
+}
+
+/* Dynamic Spotlight Border Cursor Effect (Linear.app style) */
+.card-base::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  padding: 1px;
+  background: radial-gradient(320px circle at var(--mouse-x, -500px) var(--mouse-y, -500px), rgba(59, 130, 246, 0.45), transparent 70%);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+
+.card-base:hover::before {
+  opacity: 1;
+}
+
+/* Interactive Cross-Filtering Synergy Highlights */
+.highlight-match {
+  border-color: #3b82f6 !important;
+  box-shadow: 0 0 25px rgba(59, 130, 246, 0.35) !important;
+  transform: translateY(-2px) scale(1.008) !important;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.synergy-hover {
+  border-color: #38bdf8 !important;
+  box-shadow: 0 0 24px rgba(56, 189, 248, 0.32) !important;
+  transform: translateY(-2px) scale(1.01) !important;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.dimmed-card {
+  opacity: 0.35 !important;
+  filter: grayscale(45%) !important;
+  transition: all 0.25s ease !important;
+}
+
+.tech-tag-clickable {
+  cursor: pointer;
+  transition: all 0.15s ease;
+  user-select: none;
+}
+
+.tech-tag-clickable:hover, .tech-tag-active {
+  background: rgba(59, 130, 246, 0.2) !important;
+  color: #93c5fd !important;
+  border-color: #3b82f6 !important;
+}
+
+/* Architecture Pipeline Interactive Chips & Inspector */
+.pipeline-node-chip {
+  cursor: pointer;
+  transition: all 0.18s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  user-select: none;
+}
+
+.pipeline-node-chip:hover {
+  background: rgba(59, 130, 246, 0.2) !important;
+  border-color: #60a5fa !important;
+  color: #ffffff !important;
+  transform: translateY(-1px);
+}
+
+.pipeline-node-chip.active {
+  background: rgba(59, 130, 246, 0.3) !important;
+  border-color: #38bdf8 !important;
+  color: #38bdf8 !important;
+  box-shadow: 0 0 12px rgba(56, 189, 248, 0.3);
+  transform: translateY(-1px);
+}
+
+.pipeline-inspector {
+  animation: fadeIn 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Active Filter Banner */
+#activeFilterBanner {
+  animation: slideDown 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Buttons */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.55rem 1.15rem;
+  font-weight: 500;
+  font-size: 0.8125rem;
+  border-radius: 8px;
+  background: var(--accent-primary);
+  color: #ffffff;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  text-decoration: none;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.btn-primary:hover {
+  background: var(--accent-primary-hover);
+  transform: translateY(-1px);
+}
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.55rem 1.1rem;
+  font-weight: 500;
+  font-size: 0.8125rem;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.03);
+  color: var(--text-primary);
+  border: 1px solid var(--border-medium);
+  cursor: pointer;
+  transition: all 0.15s ease;
+  text-decoration: none;
+}
+
+.btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.07);
+  border-color: rgba(255, 255, 255, 0.22);
+  color: #ffffff;
+}
+
+/* Badges & Tags */
+.badge-neutral {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  padding: 0.2rem 0.55rem;
+  font-size: 0.72rem;
+  font-weight: 500;
+  border-radius: 6px;
+  background: #111726;
+  color: var(--text-secondary);
+  border: 1px solid var(--border-subtle);
+}
+
+.badge-blue {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  padding: 0.2rem 0.55rem;
+  font-size: 0.72rem;
+  font-weight: 500;
+  border-radius: 6px;
+  background: rgba(59, 130, 246, 0.1);
+  color: #93c5fd;
+  border: 1px solid rgba(59, 130, 246, 0.25);
+}
+
+.badge-emerald {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  padding: 0.2rem 0.55rem;
+  font-size: 0.72rem;
+  font-weight: 500;
+  border-radius: 6px;
+  background: rgba(16, 185, 129, 0.1);
+  color: #6ee7b7;
+  border: 1px solid rgba(16, 185, 129, 0.25);
+}
+
+/* Section Header styling */
+.section-title {
+  font-size: 1.45rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--text-primary);
+}
+
+.section-subtitle {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  margin-top: 0.25rem;
+}
+
+/* Modal Styling */
+.modal-backdrop {
+  background: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(8px);
+}
+
+.modal-content {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-medium);
+  border-radius: 12px;
+  box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.6);
+}
+
+/* Toast Notification */
+#toastNotification {
+  opacity: 0;
+  transform: translate(-50%, 20px);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+#toastNotification.show {
+  opacity: 1;
+  transform: translate(-50%, 0);
+}
+
+/* Command Palette Items */
+.palette-item {
+  border-radius: 8px;
+}
+
+.palette-item.active {
+  background: rgba(59, 130, 246, 0.12);
+  border-color: rgba(59, 130, 246, 0.35);
+}
+
+/* Floating Back to Top Button */
+#backToTopBtn {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 40;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(10px);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  background: rgba(11, 16, 28, 0.9);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--border-medium);
+  border-radius: 9999px;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #94a3b8;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+}
+
+#backToTopBtn:hover {
+  color: #ffffff;
+  border-color: #3b82f6;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(59, 130, 246, 0.3);
+}
+
+#backToTopBtn.visible {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+/* Keyboard Accessibility Focus Visible Rings */
+a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible {
+  outline: 2px solid #3b82f6 !important;
+  outline-offset: 2px !important;
+}
+
+/* Print Container: Hidden on screen, shown only when printing */
+#printableResume {
+  display: none;
+}
+
+@media print {
+  #printableResume {
+    display: block !important;
+  }
+  .screen-only {
+    display: none !important;
+  }
+}
+
+/* Mobile Screen Specific Tweaks */
+@media screen and (max-width: 640px) {
+  body {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  .card-base {
+    padding: 1rem;
+    border-radius: 10px;
+  }
+
+  .section-title {
+    font-size: 1.25rem;
+  }
+
+  .section-subtitle {
+    font-size: 0.8125rem;
+  }
+
+  .btn-primary, .btn-secondary {
+    padding: 0.55rem 1rem;
+    font-size: 0.8125rem;
+    width: 100%;
+    text-align: center;
+  }
+
+  #backToTopBtn {
+    bottom: 1.25rem;
+    right: 1.25rem;
+    width: 32px;
+    height: 32px;
+  }
+}
+
+/* ==============================================================================
+   CYBER HUD TELEMETRY, RETICLES & COMMUNICATION CHANNELS
+   ============================================================================== */
+
+/* Cyber HUD Sub-Navigation Bar */
+.cyber-hud-bar {
+  background: rgba(6, 10, 18, 0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--cyber-border);
+  box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.6);
+}
+
+.cyber-pulse-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 9999px;
+  background-color: var(--cyber-accent);
+  box-shadow: 0 0 8px var(--cyber-accent);
+  animation: cyberPulse 2s infinite ease-in-out;
+}
+
+@keyframes cyberPulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(0.8); }
+}
+
+/* Card Cyber Corner Bracket Crosshairs */
+.card-base::after {
+  content: '';
+  position: absolute;
+  top: 6px;
+  right: 8px;
+  width: 7px;
+  height: 7px;
+  border-top: 1.5px solid var(--cyber-accent);
+  border-right: 1.5px solid var(--cyber-accent);
+  opacity: 0.35;
+  transition: opacity 0.25s ease, width 0.25s ease, height 0.25s ease;
+  pointer-events: none;
+}
+
+.card-base:hover::after {
+  opacity: 0.95;
+  width: 11px;
+  height: 11px;
+  box-shadow: 1px -1px 6px var(--cyber-accent);
+}
+
+/* Cyber Text Scramble */
+.cyber-scramble {
+  cursor: pointer;
+  transition: color 0.15s ease;
+}
+
+.cyber-scramble:hover {
+  color: var(--cyber-accent) !important;
+  text-shadow: 0 0 10px var(--cyber-glow);
+}
+
+/* Cyber Communication Channel Link Pills */
+.cyber-channel-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.2rem 0.55rem;
+  font-size: 0.72rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 500;
+  border-radius: 4px;
+  background: rgba(15, 23, 42, 0.7);
+  color: var(--text-secondary);
+  border: 1px solid var(--border-subtle);
+  transition: all 0.2s ease;
+  text-decoration: none;
+}
+
+.cyber-channel-pill:hover {
+  color: var(--cyber-accent);
+  border-color: var(--cyber-accent);
+  background: rgba(var(--cyber-accent-rgb), 0.12);
+  box-shadow: 0 0 10px var(--cyber-glow);
+}
+
+.cyber-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.2rem 0.55rem;
+  font-size: 0.7rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 500;
+  border-radius: 4px;
+  background: rgba(var(--cyber-accent-rgb), 0.08);
+  color: var(--cyber-accent);
+  border: 1px solid var(--cyber-border);
+}

@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Allow: /index.html
+Allow: /ats_resume.html
+
+Sitemap: https://harman-singh-kohli.onrender.com/sitemap.xml

@@ -1,0 +1,25 @@
+{
+  "name": "harman-portfolio",
+  "version": "1.0.0",
+  "description": "Harman Singh Kohli - Interactive Dark Portfolio & Resume",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "build": "echo 'Production build ready'",
+    "test": "node -e \"console.log('Production server ready')\""
+  },
+  "keywords": [
+    "portfolio",
+    "resume",
+    "developer",
+    "render",
+    "java",
+    "spring-boot",
+    "generative-ai"
+  ],
+  "author": "Harman Singh Kohli",
+  "license": "MIT",
+  "engines": {
+    "node": ">=16.0.0"
+  }
+}

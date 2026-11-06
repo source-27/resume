@@ -1,0 +1,23 @@
+# ==============================================================================
+# Git Ignore - Private Personal Assets & Confidential Files
+# ==============================================================================
+
+# Private personal photo (Ignored so it is NEVER committed or posted to GitHub)
+harman_photo.jpg
+*.jpg
+*.jpeg
+*.png
+!favicon.png
+
+# Dependencies & Build
+node_modules/
+dist/
+.cache/
+
+# System, IDE & Logs
+.DS_Store
+Thumbs.db
+desktop.ini
+.idea/
+.vscode/
+*.log
